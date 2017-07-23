@@ -5,6 +5,14 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 " Vim Airline
 Plug 'vim-airline/vim-airline'
+" Vim GitGutter vim/git integration
+Plug 'airblade/vim-gitgutter'
+" Vim Syntastyc vim syntax checker
+"Plug 'vim-syntastic/syntastic'
+" Vim Asinc lint syntax checker
+Plug 'w0rp/ale'
+" Supertab better keybind for autocompletation
+"Plug 'ervandew/supertab'
 
 call plug#end()
 "------------------------------------------------------------
@@ -192,6 +200,31 @@ map Y y$
 " Map <C-L> (redraw screen) to also turn off search highlighting until the
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
+
+
+
+"------------------------------------------------------------
+" Vim built-in file manager netrw config
+"
+" Hide The Banner, press I to make it appear
+let g:netrw_banner = 0
+" Tree-Style
+let g:netrw_liststyle = 3
+" Open new file in previous windows by default
+"     1 - open files in a new horizontal split
+"     2 - open files in a new vertical split
+"     3 - open files in a new tab
+"     4 - open in previous window
+let g:netrw_browse_split = 4
+" Window Width of netrw
+let g:netrw_winsize = 25
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+" Open netwr at launch
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
 
 
 "------------------------------------------------------------
