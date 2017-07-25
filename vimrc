@@ -228,6 +228,29 @@ let g:netrw_altv = 1
 
 
 "------------------------------------------------------------
+" ALE async linter config
+
+" disable particular linter
+let g:ale_linters = {
+\   'c' : ['cppcheck', 'gcc' ]     
+\}
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+" Format echo msg
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+
+
+" Jump to error using Ctrl-k/j 
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" gcc config
+let g:ale_c_gcc_options = '-Wall -Wextra'
+" cppcheck config
+let g:ale_c_cppcheck_options = '--enable=style --enable=warning'
+"------------------------------------------------------------
 " powerline setup
 "
 "let g:powerline_pycmd = "py3"
