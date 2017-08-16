@@ -42,6 +42,15 @@ bindsym $mod+shift+f exec firefox
 # lock the screen using personal script
 bindsym $mod+q exec $HOME/bin/myi3lock
 
+# Keyboard script
+bindsym $mod+Scroll_Lock exec $HOME/bin/keyboard_backlight
+
+# screen Shot
+bindsym $mod+Print exec $HOME/bin/screenshot
+
+# open emacs
+bindsym $mod+m exec emacs
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -136,19 +145,20 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # Bynd Multimedia special key
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+#bindsym XF86AudioPlay exec playerctl play
+#bindsym XF86AudioPause exec playerctl pause
+#bindsym XF86AudioNext exec playerctl next
+#bindsym XF86AudioPrev exec playerctl previous
+
 
 
 # resize window (you can also use the mouse for that)
@@ -183,7 +193,7 @@ bindsym $mod+r mode "resize"
 # Border style for new windows
 # new_window normal|none|pixel
 # new_window normal|pixel <px>
-new_window normal
+new_window pixel
 
 # Color of Windows Decoration
 # <colorclass> 		<border>  <background> 	<text>   <indicator> <child_border>
@@ -309,6 +319,8 @@ show_marks yes
 		#binding_mode  		#d79921		#1d2021       	#83a598
 	#}
 #}
+
+# STARTUP APPS
 
 # wallpaper
 exec_always --no-startup-id  feh --bg-scale $HOME/.config/i3/wallpaper.jpg
