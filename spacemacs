@@ -58,8 +58,8 @@ values."
      ;; ###################################
      ;; #         Org Package             #
      ;; ###################################
-     (org :variables
-          spacemacs/toggle-line-numbers t)
+     org
+
 
      ;; ###################################
      ;; #      Programming Language       #
@@ -77,6 +77,11 @@ values."
      ;; #          Email Package          #
      ;; ###################################
      ;; mu4e
+
+     ;; ###################################
+     ;; #          Fun Package            #
+     ;; ###################################
+     ;; xkcd
 
      ;; ###################################
      ;; #       Spacemacs Package         #
@@ -303,7 +308,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers `relative
+   dotspacemacs-line-numbers `relative'
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -383,38 +388,7 @@ you should place your code here."
               (set-frame-parameter frame 'background-mode mode)
               (set-terminal-parameter frame 'background-mode mode))))
 
-  ;; ###################################
-  ;; # Mu4e config      #
-  ;; ###################################
-  ;; Set up some common mu4e variables
-  (setq mu4e-maildir "~/.mail"
-        mu4e-trash-folder "~/.mail/Trash"
-        mu4e-refile-folder "~/.mail/Archive"
-        mu4e-get-mail-command "mbsync -a"
-        mu4e-update-interval nil
-        mu4e-compose-signature-auto-include nil
-        mu4e-view-show-images t
-        mu4e-view-show-addresses t)
-
- ;; Mail directory shortcuts
-  (setq mu4e-maildir-shortcuts
-        '(("/gmail/INBOX" . ?g)
-          ("/college/INBOX" . ?c)))
-
- ;; Bookmarks
-  (setq mu4e-bookmarks
-        `(("flag:unread AND NOT flag:trashed" "Unread messages" ?u)
-          ("date:today..now" "Today's messages" ?t)
-          ("date:7d..now" "Last 7 days" ?w)
-          ("mime:image/*" "Messages with images" ?p)
-          (,(mapconcat 'identity
-                       (mapcar
-                        (lambda (maildir)
-                          (concat "maildir:" (car maildir)))
-                        mu4e-maildir-shortcuts) " OR ")
-           "All inboxes" ?i)))
-
-  )
+    )
 ;;
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
