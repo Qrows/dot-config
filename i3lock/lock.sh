@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# vim:ft=bash
 
 icon="$HOME/.config/i3lock/i3icon.png"
 tmpbg='/tmp/screen.png'

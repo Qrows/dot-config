@@ -1,0 +1,25 @@
+rename Musica
+rename Aur
+open_with mpv --profile=cuda 
+open_with !mpv --profile=cuda
+
+mpv --profile:cuda 
+open
+open_with
+open_with mpv -- --profile=cuda
+open_with mpv --fs
+open_with mpv --profile=help
+open_with mpv --profile=cuda
+open h
+h
+help
+open_with 3
+open_with 
+split
+tab
+tab_new
+select_file 
+copy
+paste
+delete
+shell 

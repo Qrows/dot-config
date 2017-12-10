@@ -37,7 +37,16 @@ floating_modifier $mod
 bindsym $mod+Return exec i3-sensible-terminal
 
 # start firefox
-bindsym $mod+shift+f exec firefox
+bindsym $mod+shift+f exec firefox-developer
+
+# start firefox private mode
+bindsym $mod+shift+p exec firefox-developer -private-window
+
+# start ncmpcpp client
+bindsym $mod+m exec i3-sensible-terminal -e "ncmpcpp"
+
+# start ranger file manager
+bindsym $mod+shift+m exec i3-sensible-terminal -e "ranger" 
 
 # lock the screen using personal script
 bindsym $mod+q exec $HOME/bin/myi3lock
@@ -48,8 +57,18 @@ bindsym $mod+Scroll_Lock exec $HOME/bin/keyboard_backlight
 # screen Shot
 bindsym $mod+Print exec $HOME/bin/screenshot
 
-# open emacs
-bindsym $mod+m exec emacs
+# rofi alt-tab behaviour
+bindsym Mod1+Tab exec rofi -show window
+
+# open zathura
+bindsym $mod+z exec zathura
+
+# open passmenu-rofi
+bindsym $mod+p exec passmenu-rofi
+
+# open oblogout
+for_window [class="Oblogout"] fullscreen enable
+bindsym $mod+o exec oblogout 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -59,7 +78,8 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+shift+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id rofi -show drun 
 
 # change focus
 bindsym $mod+j focus left
@@ -330,5 +350,7 @@ exec_always --no-startup-id  feh --bg-scale $HOME/.config/i3/wallpaper.jpg
 exec_always --no-startup-id /home/chris/.config/polybar/launch.sh
 # redshift
 exec --no-startup-id redshift -l 41.5:12.5 -t 6500:3600 -g 0.8 -m randr -v
-#
+# udiskie
 exec --no-startup-id udiskie -2
+# Start dropbox at start
+exec --no-startup-id dropbox
