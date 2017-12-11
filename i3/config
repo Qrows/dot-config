@@ -346,6 +346,8 @@ show_marks yes
 exec_always --no-startup-id  feh --bg-scale $HOME/.config/i3/wallpaper.jpg
 # keyboard Layout
 #  exec --no-startup-id "setxkbmap -layout it"
+# Start compton at start
+exec --no-startup-id compton -b
 # polybar
 exec_always --no-startup-id /home/chris/.config/polybar/launch.sh
 # redshift
