@@ -27,6 +27,7 @@ set nobackup
 set nowritebackup
 set directory=~/.nvim/.swapfiles//
 
+set conceallevel=2
 """""""""""""""""""""
 "       Plugin      " 
 """""""""""""""""""""
@@ -48,29 +49,35 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 " GOYO
 Plug 'junegunn/goyo.vim'
-" Markdown support
-Plug '/plasticboy/vim-markdown' 
-" Latex Support
-Plug '/lervag/vimtex'
 " VimWiki
-Plug 'vimwiki/vimwiki', { 'branch' : 'dev' }
+Plug 'vimwiki/vimwiki', { 'branch' : 'dev' } 
+" i3wm syntax
+Plug 'PotatoesMaster/i3-vim-syntax'
 call plug#end()
 
 """""""""""""""""""""
 "  Plugin Setting   " 
 """""""""""""""""""""
+"
 " base16 theme
 colorscheme base16-gruvbox-dark-hard
+"
 " AutoComplete config
 let g:deoplete#enable_at_startup = 1
 set completeopt-=preview
 let g:deoplete#sources#clang#libclang_path = '/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header = '/usr/lib/clang'
+"
 " Ultisnippet config
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
+"
 " vimwiki config
-let g:vimwiki_list = [{'path': '~/.vimwiki',
-					 \ 'syntax' : 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{ 'path': '~/Dropbox/vimwiki', 'syntax' : 'markdown'}]
+"
+" markdown config
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh']
+let g:markdown_syntax_conceal = 1
+let g:markdown_minlines = 100
