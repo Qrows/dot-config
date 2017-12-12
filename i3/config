@@ -26,9 +26,16 @@ font pango:SauceCodePro Nerd Font 8
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
+# clear in small sizes. However, its unicode glyph coverage is limited, the olk
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
+
+# i3wm gaps config
+
+#gaps inner 0 
+#gaps outer 0
+#smart_gaps on
+#smart_borders on
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -72,6 +79,12 @@ bindsym $mod+o exec oblogout
 
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# hide border
+hide_edge_borders smart
+
+# float windows
+for_window [class="Pinentry"] floating enable
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -347,7 +360,7 @@ exec_always --no-startup-id  feh --bg-scale $HOME/.config/i3/wallpaper.jpg
 # keyboard Layout
 #  exec --no-startup-id "setxkbmap -layout it"
 # Start compton at start
-exec --no-startup-id compton -b
+ exec --no-startup-id compton -b
 # polybar
 exec_always --no-startup-id /home/chris/.config/polybar/launch.sh
 # redshift
@@ -356,3 +369,5 @@ exec --no-startup-id redshift -l 41.5:12.5 -t 6500:3600 -g 0.8 -m randr -v
 exec --no-startup-id udiskie -2
 # Start dropbox at start
 exec --no-startup-id dropbox
+
+# vim:filetype=i3
