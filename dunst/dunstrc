@@ -174,8 +174,8 @@
 
 [base16_low]
     msg_urgency = low
-    background = "#EBDBB2"
-    foreground = "#BDAE93"
+    background = "#98971a"
+    foreground = "#504945"
 
 [base16_normal]
     msg_urgency = normal
